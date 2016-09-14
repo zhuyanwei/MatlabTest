@@ -1,7 +1,8 @@
 %for test
-if 1 > 0 && ...,
-    2 > 3
-  a = 1111
+function [sss,tf] = ForTest(i,j)
+if i == j
+  tf = 1;
 else
-  a = 222
+  tf = 0;
 end
+sss = 999;
