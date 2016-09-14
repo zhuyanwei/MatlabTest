@@ -1,5 +1,5 @@
 %function for searching next suitable states
-function [planStates,nPlanStates,planState,nPlanState]  = searchStates(s,u,N,M)
+function [planStates,nPlanStates,planState,nPlanState]  = searchStates(s,u,N,M,innerN)
 planStates = [];
 d = [];
 %k--count the number of suitable strategies
@@ -30,13 +30,16 @@ for j = 1:1:k
   end
 end
 %get certain one state and its number
+if innerN > nPlanStates
+  disp('the innerN is wrong');
+  return;
+end
 planState = [];
 nPlanState = 0;
 if nPlanStates == 0
   planState = [];
   nPlanState = 0;
 else
-  for j2 = 1:1:nPlanStates
-    
-  end
+  nPlanState = innerN;
+  planState = planStates(:,nPlanState);
 end

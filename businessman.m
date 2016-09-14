@@ -17,7 +17,7 @@ while num(nNextS) ~= 0
   else
     u = -1;
   end
-  [nextS,nNextS] = searchStates(currS(:,k),u,N,M);
+  [nextSS,nNextSS,nextS,nNextS] = searchStates(currS(:,end),u,N,M,j2);
   if nNextS ~= 0
     for k2 = 1:1:nNextS
       currS = nextS(:,k2);
